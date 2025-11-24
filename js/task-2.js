@@ -1,8 +1,8 @@
 class Storage {
   #items;
 
-  constructor(createItems) {
-    this.#items = createItems;
+  constructor(initialItems) {
+    this.#items = initialItems;
   }
 
   getItems() {
@@ -13,8 +13,8 @@ class Storage {
     this.#items.push(newItem);
   }
 
-  removeItem(objectRemove) {
-    this.#items = this.#items.filter((item) => item !== objectRemove);
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter((item) => item !== itemToRemove);
   }
 }
 
@@ -24,3 +24,4 @@ storage.addItem("Droid");
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage.removeItem("Prolonger");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
