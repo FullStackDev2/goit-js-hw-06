@@ -1,8 +1,8 @@
 class Storage {
   #items;
 
-  constructor(initialItems) {
-    this.#items = initialItems;
+  constructor(createItems) {
+    this.#items = createItems;
   }
 
   getItems() {
@@ -18,10 +18,9 @@ class Storage {
   }
 }
 
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+const storage = new Storage (["Nanitoids", "Prolonger", "Antigravitator"]);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
 storage.addItem("Droid");
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage.removeItem("Prolonger");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
-
